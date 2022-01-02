@@ -13,10 +13,9 @@ const PasswordGenerator = () => {
     const draftPassword = [];
 
     // popular o draftPassword (letras, digitos e simbolos)
-    draftPassword.push("1")
-    draftPassword.push("$")
-    draftPassword.push("x")
-    console.log("enzo")
+    draftPassword.push(...Array.from({ length: digitsLength }, randomDigit))
+    draftPassword.push(...Array.from({ length: symbolsLength }, randomSymbol))
+    draftPassword.push(...Array.from({ length: passwordLength }, randomLetter))
 
     setPassword(
       draftPassword
@@ -25,6 +24,26 @@ const PasswordGenerator = () => {
         .join("")); // transforma todo o array em uma string
   }, [passwordLength, digitsLength, symbolsLength])
   
+  const randomDigit = () => {
+    const digits = "0123456789";
+
+    return digits[Math.floor(Math.random() * digits.length)];
+  }
+
+  const randomSymbol = () => {
+    const symbols = "#$%(+,./;?@[]!{}";
+
+    return symbols[Math.floor(Math.random() * symbols.length)];
+  }
+
+  const randomLetter = () => {
+    const letters = "abcdefghijklmnopqrstuvwxyz";
+
+    const letter = letters[Math.floor(Math.random() * letters.length)];
+
+    return Math.random() >= 0.5 ? letter : letter.toUpperCase();
+  }
+
   return (
     <>
       <div className="slider">
