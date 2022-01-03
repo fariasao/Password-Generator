@@ -1,6 +1,7 @@
 import "./styles.css";
 import { useState, useEffect } from "react";
 import PasswordBox from '../PasswordBox';
+import CopyPassword from '../CopyPassword';
 
 const PasswordGenerator = () => {
 
@@ -87,6 +88,7 @@ const PasswordGenerator = () => {
       </div>
 
       <PasswordBox password={password}/>
+      <CopyPassword password={password}/>
     </>
   );
 };

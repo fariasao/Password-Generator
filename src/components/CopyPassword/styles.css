@@ -1,0 +1,23 @@
+.actions {
+  display: flex;
+  justify-content: center;
+}
+
+.copy-password {
+  margin-top: 2rem;
+  padding: 0.5rem 0.75rem;
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 7px;
+  font-size: 1rem;
+}
+
+.copy-password:hover {
+  filter: brightness(120%);
+  background-color: #0a4fa2
+}
+
+button {
+  cursor: pointer;
+}
